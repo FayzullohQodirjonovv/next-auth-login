@@ -1,91 +1,87 @@
 "use client"
 import { Github } from 'lucide-react'
 import React from 'react'
-import {signIn,} from "next-auth/react"
+import { signIn } from "next-auth/react"
+
 const Login = () => {
-    const signInWithGitHub = () => {
-        signIn("github",{
-            redirect:true,
-            callbackUrl:"/dashboard"
-        })
-};
+  const signInWithGitHub = () => {
+    signIn("github", {
+      redirect: true,
+      callbackUrl: "/dashboard"
+    })
+  }
+
   const signInWithGoogle = () => {
-        signIn("google",{
-            redirect:true,
-            callbackUrl:"/dashboard"
-        })
-};
+    signIn("google", {
+      redirect: true,
+      callbackUrl: "/dashboard"
+    })
+  }
+
   return (
-     <div className="lg:min-h-screen flex flex-col items-center justify-center p-6">
-      <div className="grid lg:grid-cols-2 items-center gap-10 max-w-6xl max-lg:max-w-lg w-full">
-        <div>
-          <h1 className="lg:text-5xl text-4xl font-bold text-slate-900 !leading-tight">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl w-full">
+        <div className="text-center lg:text-left">
+          <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
             Seamless Login for Exclusive Access
           </h1>
-          <p className="text-[15px] mt-6 text-slate-600 leading-relaxed">
+          <p className="text-base mt-6 text-slate-600">
             Immerse yourself in a hassle-free login journey with our intuitively designed login form. Effortlessly access your account.
           </p>
-          <p className="text-[15px] mt-6 lg:mt-12 text-slate-600">
-            Don't have an account
+          <p className="text-sm mt-6 text-slate-600">
+            Don't have an account?
             <a href="#" className="text-blue-600 font-medium hover:underline ml-1">Register here</a>
           </p>
         </div>
 
-        <form className="max-w-md lg:ml-auto w-full">
-          <h2 className="text-slate-900 text-3xl font-semibold mb-8">
+        <form className="w-full max-w-md mx-auto">
+          <h2 className="text-3xl font-semibold text-slate-900 mb-8 text-center lg:text-left">
             Sign in
           </h2>
 
           <div className="space-y-6">
             <div>
-              <label className="text-sm text-slate-900 font-medium mb-2 block">Email</label>
+              <label className="block text-sm font-medium text-slate-900 mb-1">Email</label>
               <input
                 name="email"
                 type="email"
                 required
-                className="bg-slate-100 w-full text-sm text-slate-900 px-4 py-3 rounded-md outline-0 border border-gray-200 focus:border-blue-600 focus:bg-transparent"
                 placeholder="Enter Email"
+                className="w-full px-4 py-3 text-sm border border-gray-200 rounded-md bg-slate-100 text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white"
               />
             </div>
             <div>
-              <label className="text-sm text-slate-900 font-medium mb-2 block">Password</label>
+              <label className="block text-sm font-medium text-slate-900 mb-1">Password</label>
               <input
                 name="password"
                 type="password"
                 required
-                className="bg-slate-100 w-full text-sm text-slate-900 px-4 py-3 rounded-md outline-0 border border-gray-200 focus:border-blue-600 focus:bg-transparent"
                 placeholder="Enter Password"
+                className="w-full px-4 py-3 text-sm border border-gray-200 rounded-md bg-slate-100 text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white"
               />
             </div>
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center">
+            <div className="flex items-center justify-between">
+              <label className="flex items-center text-sm text-slate-900">
                 <input
-                  id="remember-me"
-                  name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
-                <label htmlFor="remember-me" className="ml-3 block text-sm text-slate-900">
-                  Remember me
-                </label>
-              </div>
-              <div className="text-sm">
-                <a href="#" className="text-blue-600 hover:text-blue-500 font-medium">
-                  Forgot your password?
-                </a>
-              </div>
+                <span className="ml-2">Remember me</span>
+              </label>
+              <a href="#" className="text-sm text-blue-600 hover:text-blue-500 font-medium">
+                Forgot your password?
+              </a>
             </div>
           </div>
 
-          <div className="!mt-12">
+          <div className="mt-8">
             <button
               type="button"
-              className="w-full shadow-xl py-2.5 px-4 text-[15px] font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none cursor-pointer"
+              className="w-full py-2.5 px-4 text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none shadow"
             >
               Log in
             </button>
           </div>
-
           <div className="my-6 flex items-center gap-4">
             <hr className="w-full border-slate-300" />
             <p className="text-sm text-slate-900 text-center">or</p>
@@ -125,4 +121,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
