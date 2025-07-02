@@ -29,7 +29,7 @@ const Login = () => {
             Immerse yourself in a hassle-free login journey with our intuitively designed login form. Effortlessly access your account.
           </p>
           <p className="text-sm mt-6 text-slate-600">
-            Don't have an account?
+            Don&apos;t have an account?
             <a href="#" className="text-blue-600 font-medium hover:underline ml-1">Register here</a>
           </p>
         </div>
